@@ -3,6 +3,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import exampleRoute from './routes/exampleRoute.ts';
+import record from './routes/record';
 dotenv.config();
 const app:Express = express();
 app.use(cors());
@@ -25,6 +26,8 @@ app.get('/health', (_req : Request, res:Response) => {
 });
 
 app.use('/api/example', exampleRoute);
+app.use('/api/record', record);
+
 
 const PORT: string|number = process.env.PORT || 3000;
 app.listen(PORT, () => {
