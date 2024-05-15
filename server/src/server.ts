@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const uri: string = process.env.MONGODB_URI || 'mongodb://localhost:27017/organizer';
-console.log(uri);
 (async () => {
   try {
     await mongoose.connect(uri);
